@@ -1,0 +1,26 @@
+application: guestbooktutorial-141111
+version: 112
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+# [START handlers]
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /bootstrap
+  static_dir: bootstrap
+
+- url: /.*
+  script: guestbook.app
+# [END handlers]
+
+# [START libraries]
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+# [END libraries]
